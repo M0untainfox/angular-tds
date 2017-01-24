@@ -1,8 +1,11 @@
- <script type="text/javascript" src="apps.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 
-<fieldset data-ng-app="myApp" data-ng-controller="CarreController">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+ <script type="text/javascript" src="apps.js"></script>
+
+<fieldset data-ng-app="myApp" >
+  <div data-ng-controller="CarreController as ctrl">
     <legend>Carré</legend>
-    <input type="text" data-ng-model="value">
-    <div>Carré : {{carre(value)}}</div>
+    <input type="text" data-ng-model="ctrl.value">
+    <div>Carré : {{ctrl.carre(ctrl.value)}}</div>
+  </div>
 </fieldset>
