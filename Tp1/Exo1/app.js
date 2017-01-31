@@ -33,6 +33,19 @@ myApp.controller('textController', ['$cookies',function($cookies) {
 
     };
 
+    this.Class = function(){
+      if(this.prenom.length>80){
+        return "alert alert-danger alert-dismissible" ;
+      }
+      else{
+          if(this.prenom.length>50){
+            return "alert alert-warning alert-dismissible" ;
+          }
+          else return "alert alert-info alert-dismissible" ;
+      }
+
+
+    };
     this.supprCookie = function(){
       this.etat="0";
       this.prenom="";

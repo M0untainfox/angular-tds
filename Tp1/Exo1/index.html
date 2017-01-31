@@ -34,7 +34,7 @@
 		</p>
 
 		<div class="alert alert-info alert-dismissible" role="alert">Nombre de caractères restant : {{text.TailleRestante(text.prenom)}} </div>
-		<div ng-show="text.etat=='1'" class="alert alert-info alert-dismissible" role="alert">Note sauvegarder</div>
+		<div ng-show="text.etat=='1'" ng-class="text.Class()" role="alert">Note sauvegarder</div>
 		<div ng-show="text.etat=='2'" class="alert alert-info alert-dismissible" role="alert">Note modifiée</div>
 
 		</div>
