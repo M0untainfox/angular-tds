@@ -1,5 +1,7 @@
 var myApp = angular.module('myApp',['ngCookies']);
 
+
+
 myApp.controller('textController', ['$cookies',function($cookies) {
     this.prenom="";
     this.etat="0";
