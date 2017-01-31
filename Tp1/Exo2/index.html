@@ -22,18 +22,19 @@
 <script type="text/javascript" src="app.js"></script>
 
 <div style=" width:40%; margin:auto;background-color:#168ABC;">
-<div data-ng-app="myApp" ng-controller="ServicesController as serv" class="toggle ng-scope text-center" style=" width:80%;height:90%; margin:auto;">
+<div data-ng-app="myApp" ng-controller="ServicesController as serv" class="toggle ng-scope" style=" width:80%;height:90%; margin:auto;">
 	<form id="services" class="ng-valid ng-scope ng-dirty ng-valid-parse" style="">
-	<h1>Services</h1>
-	<div class="alert alert-info">
+	<h1 class="text-center">Services</h1>
+	<div class="alert alert-info ">
 		<span>Choisissez les éléments à inclure</span>
 	</div>
-			<div ng-repeat="service in serv.Services">
-					{{service.name}}
+			<ul style="list-style-type: none; padding-left:0px;   ">
+			<div ng-repeat="service in serv.Services" style="text-left">
+					<li style="alert alert-info alert-dismissible">{{service.name}}</li>
 
 
 			</div>
-
+		</ul>
 
 
 		<p>
