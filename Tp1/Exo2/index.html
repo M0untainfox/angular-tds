@@ -1,0 +1,69 @@
+<header>
+	<meta charset="utf-8" />
+	<title> bien sale bien dégoutant</title>
+
+</header>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.js"></script>
+
+<script type="text/javascript" src="app.js"></script>
+
+<div style=" width:40%; margin:auto;background-color:#168ABC;">
+<div data-ng-app="myApp" ng-controller="ServicesController as serv" class="toggle ng-scope text-center" style=" width:80%;height:90%; margin:auto;">
+	<form id="services" class="ng-valid ng-scope ng-dirty ng-valid-parse" style="">
+	<h1>Services</h1>
+	<div class="alert alert-info">
+		<span>Choisissez les éléments à inclure</span>
+	</div>
+			<div ng-repeat="service in serv.Services">
+					{{service.name}}
+
+
+			</div>
+
+
+
+		<p>
+			<ng-pluralize count="count" when="{0:'Aucun service sélectionné',
+											1:'1 service sélectionné',
+											'other':'{} services sélectionnés'}">
+			</ng-pluralize>
+		</p>
+	</div>
+
+
+	<div class="total">
+		<!-- Format en currency. -->
+		<!-- Total: <span class="ng-binding">0,00&nbsp;€</span>-->
+	</div>
+
+
+
+	<div>
+		<div class="input-group">
+      <span class="input-group-addon">
+        <input aria-label="..." ng-model="ckPromo" ng-click="applyCode()" class="ng-valid ng-dirty ng-valid-parse ng-touched" style="" type="checkbox">
+      </span>
+			<input class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" aria-label="..." ng-model="codePromo" placeholder="Code promo" ng-keyup="applyCode()" style="" type="text">
+		</div>
+	</div>
+	<div class="total ng-hide" ng-show="ckPromo&amp;&amp;codePromo" style="">
+		Remise :<!-- ngIf: IsNumeric(remise) --><!-- ngIf: !IsNumeric(remise) --><span ng-if="!IsNumeric(remise)" class="ng-binding ng-scope">Code promo invalide</span><!-- end ngIf: !IsNumeric(remise) --><br>
+		Total avec remise :<span class="ng-binding"></span>
+	</div>
+</form>
+</div>
+</div>
