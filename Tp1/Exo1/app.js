@@ -1,30 +1,41 @@
-var myApp = angular.module('myApp',[]);
+var myApp = angular.module('myApp',['ngCookies']);
 
-myApp.controller('textController', [function() {
+myApp.controller('textController', ['$cookies',function($cookies) {
     this.prenom="";
-    this.TailleRestante = function(value) { return 100-value.length; };
+    this.etat="0";
+
+    this.TailleRestante = function(value) {
+       return 100-value.length;
+     };
 
     this.clear = function(){
-      this.prenom="";
+      this.prenom=getcookie(CookiesAngular);
     };
 
     this.energ = function(){
-      document.cookie = "text="+this.prenom;
+      this.etat="1";
+      $cookies.put('CookiesAngular',this.prenom);
     };
 
-    this.cookie = function(name){
-      name = name + "=";
-      var cookies = document.cookie.split(';');
-      for(var i = 0; i <cookies.length; i++) {
-        var cookie = cookies[i];
-        while (cookie.charAt(0)==' ') {
-            cookie = cookie.substring(1);
-        }
-        if (cookie.indexOf(name) == 0) {
-            return cookie.substring(name.length,cookie.length);
-        }
-    }
-    return "";
+    this.change = function(){
+      this.etat="2";
+    };
+
+    this.getcookie = function(){
+      if(this.prenom = $cookies.get('CookiesAngular')){
+        this.prenom = $cookies.get('CookiesAngular');s
+      }
+      else{
+        this.prenom ='';
+      }
+
+    };
+
+    this.supprCookie = function(){
+      this.etat="0";
+      this.prenom="";
+      return $cookies.remove('CookiesAngular');
+
     }
 
 }]);
