@@ -25,9 +25,25 @@
 
     this.Services = tab;
     this.click = false;
+    this.codepromo="";
 
 
 
+    this.remise = function(){
+      if(this.codepromo=="fox"){
+        return 0.1;
+      }
+      else return null;
+    };
+
+
+    this.montantRemise = function(){
+      return this.prix()*this.remise();
+    };
+
+    this.totalRemise = function(){
+      return this.prix()-this.montantRemise();
+    };
 
 
   this.class = function(vari){
