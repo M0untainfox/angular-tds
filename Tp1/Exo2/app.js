@@ -26,6 +26,17 @@
     this.Services = tab;
     this.click = false;
 
+
+
+
+
+  this.class = function(vari){
+    if(vari.active==true){
+      return "ng-binding ng-scope active";
+    }
+    else return "ng-binding ng-scope";
+  };
+
     this.btn = function(){
       if(this.click==true){
         this.click=false;

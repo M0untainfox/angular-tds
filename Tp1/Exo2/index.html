@@ -20,8 +20,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.js"></script>
 
 <script type="text/javascript" src="app.js"></script>
+<link rel="stylesheet" href="styles.css">
 
-<div style=" width:40%; margin:auto;background-color:#168ABC;">
+<div style=" width:40%; margin:auto;">
 <div data-ng-app="myApp" ng-controller="ServicesController as serv" class="toggle ng-scope" style=" width:80%;height:90%; margin:auto;">
 	<form id="services" class="ng-valid ng-scope ng-dirty ng-valid-parse" style="">
 	<h1 class="text-center">Services</h1>
@@ -35,10 +36,10 @@
 			</p>
 	</div>
 
-	<ul>
-			<li style="ng-binding ng-scope active" data-ng-click="serv.etat(service)" data-ng-repeat="service in serv.Services" style="text-left">
+	<ul style="list-style:none;margin-left:0;padding-left:0;">
+			<li data-ng-class="serv.class(service)" data-ng-click="serv.etat(service)" data-ng-repeat="service in serv.Services" style="text-left">
 
-					<div >{{service.name}} {{service.price|currency}} {{service.active}}</div>
+					<div >{{service.name}} <em class="pull-right"  >{{service.price|currency}}</em>  </div>
 			</li>
 
 </ul>
