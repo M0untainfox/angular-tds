@@ -39,10 +39,11 @@
 	<ul style="list-style:none;margin-left:0;padding-left:0;">
 			<li data-ng-class="serv.class(service)" data-ng-click="serv.etat(service)" data-ng-repeat="service in serv.Services" style="text-left">
 
-					<div >{{service.name}} <em class="pull-right"  >{{service.price|currency}}</em>  </div>
+					<div >{{service.name}}<em class="pull-right"  >{{service.price|currency}}</em>  </div>
 			</li>
 
 </ul>
+
 
 
 	<div class="total">
@@ -70,4 +71,6 @@
 
 </form>
 </div>
+
+
 </div>

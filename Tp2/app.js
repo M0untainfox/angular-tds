@@ -39,7 +39,7 @@
 
   var myApp = angular.module('myApp', []);
 
-  myApp.controller("ServicesController",function(){
+  myApp.controller("DispController",function(){
 
     this.Dispo = dispoItems;
 

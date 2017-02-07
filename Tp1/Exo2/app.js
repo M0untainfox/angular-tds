@@ -21,21 +21,26 @@
 
   var myApp = angular.module('myApp', []);
 
-  myApp.controller("ServicesController",function(){
+  myApp.controller("ServicesController",function($scope, $http){
 
     this.Services = tab;
     this.click = false;
     this.codepromo="";
 
+    $http.get("promo.json")
+    .then(function(response) {
+        $scope.myWelcome = response.data;
 
+        //alert($scope.myWelcome);
+        console.log($scope.myWelcome['B22']);
+    });
 
     this.remise = function(){
-      if(this.codepromo=="fox"){
-        return 0.1;
+      if($scope.myWelcome[this.codepromo]!=null){
+        return $scope.myWelcome[this.codepromo];
       }
       else return null;
     };
-
 
     this.montantRemise = function(){
       return this.prix()*this.remise();

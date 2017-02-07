@@ -20,59 +20,45 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.js"></script>
 
 <script type="text/javascript" src="app.js"></script>
+
 <link rel="stylesheet" href="styles.css">
 
-
+<div data-ng-app="myApp"  ng-controller="DispController  as cont">
 <form>
-
-
-
-
-
-
-
-			<table style="width:80%;margin:auto" >
-   <tr>
-       <td rowspan="4" >
-				 <select name="dispo" size="10">
-			   <option value="valeur1">Valeur 1</option>
-			   <option value="valeur2" selected>Valeur 2</option>
-			   <option value="valeur3">Valeur 3</option>
-			 </select>
+			<table style="width:95%;margin:auto" >
+   		<tr>
+       <td rowspan="4" style="width:50%;margin:auto" >
+				 <select style="width:100%;margin:auto" data-ng-model="myColor" size="10" data-ng-options="disp.title for disp in cont.Dispo">
+					 <option>{{disp.title}}</option>
+				 </select>
 		 </td>
-
-			 <td >
-			 <button> btn 1 </button>
+			 <td style="width:5%" >
+			 <button> <img src="https://image.noelshack.com/fichiers/2017/06/1486485884-1.png" alt="1" style="width:100%"> </button>
 		 </td>
-
-
-			 <td rowspan="4" >
-				 <select name="select" size="10">
-			 		<option value="valeur1">Valeur 1</option>
-			 		<option value="valeur2" selected>Valeur 2</option>
-			 		<option value="valeur3">Valeur 3</option>
-			 	</select>
+			 <td rowspan="4" style="width:50%;margin:auto" >
+				 <select style="width:100%;margin:auto" data-ng-model="myColor" size="10" data-ng-options="disp.title for disp in cont.Dispo">
+					 <option>{{disp.title}}</option>
+				 </select>
 
 			 </td>
    </tr>
    <tr>
-
        <td >
-			 <button> btn 2 </button>
+			 <button > <img src="https://image.noelshack.com/fichiers/2017/06/1486485884-3.png" alt="3" style="width:100%"> </button>
 		 </td>
 
    </tr>
 	 <tr>
 
 			 <td >
-				 <button> btn 3 </button>
+				 <button> <img src="https://image.noelshack.com/fichiers/2017/06/1486485884-4.png" alt="4" style="width:100%">  </button>
 			 </td>
 
 	 </tr>
 	 <tr>
 
 			 <td >
-			 <button> btn 4 </button>
+			 <button> <img src="https://image.noelshack.com/fichiers/2017/06/1486485884-2.png" alt="2" style="width:100%">  </button>
 		 </td>
 
 	 </tr>
@@ -81,3 +67,4 @@
 </table>
 
 </form>
+</div>
