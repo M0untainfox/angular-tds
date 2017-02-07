@@ -1,6 +1,6 @@
 <header>
 	<meta charset="utf-8" />
-	<title> bien sale bien dégoutant</title>
+	<title> Joli tp service</title>
 
 </header>
 
@@ -27,44 +27,45 @@
 	<h1 class="text-center">Services</h1>
 	<div class="alert alert-info ">
 		<span>Choisissez les éléments à inclure</span>
+			<p>
+				<ng-pluralize count="serv.count()" when="{'0': 'Aucun service sélectionné',
+												'1': '1 service sélectionné',
+												'other':'{} services sélectionnés'}">
+				</ng-pluralize>
+			</p>
 	</div>
-			<ul style="list-style-type: none; padding-left:0px;   ">
-			<div ng-repeat="service in serv.Services" style="text-left">
-					<li style="alert alert-info alert-dismissible">{{service.name}}</li>
 
+	<ul>
+			<li style="ng-binding ng-scope active" data-ng-click="serv.etat(service)" data-ng-repeat="service in serv.Services" style="text-left">
 
-			</div>
-		</ul>
+					<div >{{service.name}} {{service.price|currency}} {{service.active}}</div>
+			</li>
 
-
-		<p>
-			<ng-pluralize count="count" when="{0:'Aucun service sélectionné',
-											1:'1 service sélectionné',
-											'other':'{} services sélectionnés'}">
-			</ng-pluralize>
-		</p>
-	</div>
+</ul>
 
 
 	<div class="total">
 		<!-- Format en currency. -->
-		<!-- Total: <span class="ng-binding">0,00&nbsp;€</span>-->
+		Total: <span class="ng-binding">{{serv.prix()|currency}}</span>
 	</div>
-
-
 
 	<div>
 		<div class="input-group">
-      <span class="input-group-addon">
-        <input aria-label="..." ng-model="ckPromo" ng-click="applyCode()" class="ng-valid ng-dirty ng-valid-parse ng-touched" style="" type="checkbox">
-      </span>
+			<span class="input-group-addon">
+				<input aria-label="..." ng-model="ckPromo" ng-click="serv.btn()" class="ng-valid ng-dirty ng-valid-parse ng-touched" style="" type="checkbox">
+			</span>
 			<input class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" aria-label="..." ng-model="codePromo" placeholder="Code promo" ng-keyup="applyCode()" style="" type="text">
 		</div>
 	</div>
-	<div class="total ng-hide" ng-show="ckPromo&amp;&amp;codePromo" style="">
+	<div class="total" ng-show="serv.click==true" style="">
 		Remise :<!-- ngIf: IsNumeric(remise) --><!-- ngIf: !IsNumeric(remise) --><span ng-if="!IsNumeric(remise)" class="ng-binding ng-scope">Code promo invalide</span><!-- end ngIf: !IsNumeric(remise) --><br>
 		Total avec remise :<span class="ng-binding"></span>
 	</div>
+	</div>
+
+
+
+
 </form>
 </div>
 </div>
