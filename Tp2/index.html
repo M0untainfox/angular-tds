@@ -19,52 +19,96 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+
 <script type="text/javascript" src="app.js"></script>
 
 <link rel="stylesheet" href="styles.css">
 
-<div data-ng-app="myApp"  ng-controller="DispController  as cont">
-<form>
+<div data-ng-app="myApp"  ng-controller="DispController as cont">
+<form data-ng-show="cont.step==1">
+	<h1 class="text-center">Séléctionnez vos articles</h1>
 			<table style="width:95%;margin:auto" >
    		<tr>
        <td rowspan="4" style="width:50%;margin:auto" >
-				 <select style="width:100%;margin:auto" data-ng-model="myColor" size="10" data-ng-options="disp.title for disp in cont.Dispo">
-					 <option>{{disp.title}}</option>
+				 <select class="selectpicker" multiple ng-dblClick="cont.btn1(Dispo)" style="width:100%;margin:auto" data-ng-model="Dispo" size="10" data-ng-options="disp.title for disp in cont.Dispo|filter:disp.select=false" ng-change="cont.current=(champs.indexOf(selected_table))" >
 				 </select>
 		 </td>
 			 <td style="width:5%" >
-			 <button> <img src="https://image.noelshack.com/fichiers/2017/06/1486485884-1.png" alt="1" style="width:100%"> </button>
+				 <button class="ui icon button" data-ng-click="cont.btn1(Dispo)" style="width:100%">
+   		 			<i class="Angle Right icon"></i>
+ 				</button>
+
 		 </td>
 			 <td rowspan="4" style="width:50%;margin:auto" >
-				 <select style="width:100%;margin:auto" data-ng-model="myColor" size="10" data-ng-options="disp.title for disp in cont.Dispo">
-					 <option>{{disp.title}}</option>
+				 <select class="selectpicker" multiple ng-dblClick="cont.btn2(Select)" style="width:100%;margin:auto" data-ng-model="Select" size="10" data-ng-options="disp.title for disp in cont.Dispo|filter:disp.select=true">
 				 </select>
 
 			 </td>
    </tr>
    <tr>
        <td >
-			 <button > <img src="https://image.noelshack.com/fichiers/2017/06/1486485884-3.png" alt="3" style="width:100%"> </button>
+				 <button class="ui icon button" data-ng-click="cont.btn3(Dispo)" style="width:100%">
+						<i class="Angle Double Right icon"></i>
+				</button>
 		 </td>
 
    </tr>
 	 <tr>
 
 			 <td >
-				 <button> <img src="https://image.noelshack.com/fichiers/2017/06/1486485884-4.png" alt="4" style="width:100%">  </button>
+				 <button class="ui icon button" data-ng-click="cont.btn4(Dispo)" style="width:100%">
+						<i class="Angle Double Left icon"></i>
+				</button>
+
 			 </td>
 
 	 </tr>
 	 <tr>
 
 			 <td >
-			 <button> <img src="https://image.noelshack.com/fichiers/2017/06/1486485884-2.png" alt="2" style="width:100%">  </button>
+
+				 <button class="ui icon button" data-ng-click="cont.btn2(Select)" style="width:100%">
+						<i class="Angle Left icon"></i>
+				</button>
 		 </td>
 
 	 </tr>
 
 
 </table>
+<p><ng-pluralize count="cont.count()" when="{'0': 'Aucun article sélectionné',
+																						 '1': '1 article sélectionné',
+																						 'other':'{} articles sélectionnés'}">
+</ng-pluralize></p>
+<div data-ng-show="cont.count()!=0" style="width:95%;">
+<button data-ng-click="cont.page()"class="pull-right ui button active" >
+	<i class="Arrow Right icon"></i>
+	Page suivante
+</button>
+</div>
+
+</form>
+<form data-ng-show="cont.step==2">
+	<h1 class="text-center">Votre choix</h1>
+	<div style="width:50%;margin:auto;" data-ng-repeat="Select in cont.Dispo">
+
+		<div ng-if="Select.select==true">
+			<p><img ng-src="{{Select.image}}" style="margin-right: 30px; " alt="Description" />{{Select.title}}</p>
+			<hr>
+		</div>
+
+
+
+	</div>
+	<div data-ng-show="cont.count()!=0" style="width:95%;">
+	<button data-ng-click="cont.page()"class="pull-right ui button active" >
+		<i class="Arrow Left icon"></i>
+		Page precedente
+	</button>
+	</div>
 
 </form>
 </div>
