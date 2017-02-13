@@ -27,7 +27,7 @@
 
 <link rel="stylesheet" href="styles.css">
 
-<div data-ng-app="myApp"  ng-controller="DispController as cont">
+<div data-ng-app="myApp"  ng-controller="DispController as cont" ng-init="cont.btn4()">
 <form data-ng-show="cont.step==1">
 	<h1 class="text-center">Séléctionnez vos articles</h1>
 			<table style="width:95%;margin:auto" >
@@ -84,7 +84,7 @@
 																						 'other':'{} articles sélectionnés'}">
 </ng-pluralize></p>
 <div data-ng-show="cont.count()!=0" style="width:95%;">
-<button data-ng-click="cont.page()"class="pull-right ui button active" >
+<button data-ng-click="cont.page()" class="pull-right ui button active" >
 	<i class="Arrow Right icon"></i>
 	Page suivante
 </button>
