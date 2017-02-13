@@ -51,7 +51,7 @@
 
 
 
-    this.btn1 = function(Var){
+    this.addToIncluded = function(Var){
 
       for(i=0;i<Var.length;i++){
         Var[i].select=true;
@@ -60,19 +60,19 @@
     };
 
 
-    this.btn2 = function(Var){
+    this.removeFromIncluded = function(Var){
       for(i=0;i<Var.length;i++){
         Var[i].select=false;
       }
     };
 
-    this.btn3 = function(){
+    this.addAllToIncluded = function(){
         for(i=0;i<this.Dispo.length;i++){
           this.Dispo[i].select = true;
         }
     };
 
-    this.btn4 = function(){
+    this.removeAllFromIncluded = function(){
       for(i=0;i<this.Dispo.length;i++){
         this.Dispo[i].select = false;
       }

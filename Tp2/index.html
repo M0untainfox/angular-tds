@@ -27,30 +27,30 @@
 
 <link rel="stylesheet" href="styles.css">
 
-<div data-ng-app="myApp"  ng-controller="DispController as cont" ng-init="cont.btn4()">
+<div data-ng-app="myApp"  ng-controller="DispController as cont" ng-init="cont.removeAllFromIncluded()">
 <form data-ng-show="cont.step==1">
 	<h1 class="text-center">Séléctionnez vos articles</h1>
 			<table style="width:95%;margin:auto" >
    		<tr>
        <td rowspan="4" style="width:50%;margin:auto" >
-				 <select class="selectpicker" multiple ng-dblClick="cont.btn1(Dispo)" style="width:100%;margin:auto" data-ng-model="Dispo" size="10" data-ng-options="disp.title for disp in cont.Dispo|filter:disp.select=false" ng-change="cont.current=(champs.indexOf(selected_table))" >
+				 <select class="selectpicker" multiple ng-dblClick="cont.addToIncluded(Dispo)" style="width:100%;margin:auto" data-ng-model="Dispo" size="10" data-ng-options="disp.title for disp in cont.Dispo|filter:disp.select=false" ng-change="cont.current=(champs.indexOf(selected_table))" >
 				 </select>
 		 </td>
 			 <td style="width:5%" >
-				 <button class="ui icon button" data-ng-click="cont.btn1(Dispo)" style="width:100%">
+				 <button class="ui icon button" data-ng-click="cont.addToIncluded(Dispo)" style="width:100%">
    		 			<i class="Angle Right icon"></i>
  				</button>
 
 		 </td>
 			 <td rowspan="4" style="width:50%;margin:auto" >
-				 <select class="selectpicker" multiple ng-dblClick="cont.btn2(Select)" style="width:100%;margin:auto" data-ng-model="Select" size="10" data-ng-options="disp.title for disp in cont.Dispo|filter:disp.select=true">
+				 <select class="selectpicker" multiple ng-dblClick="cont.removeFromIncluded(Select)" style="width:100%;margin:auto" data-ng-model="Select" size="10" data-ng-options="disp.title for disp in cont.Dispo|filter:disp.select=true">
 				 </select>
 
 			 </td>
    </tr>
    <tr>
        <td >
-				 <button class="ui icon button" data-ng-click="cont.btn3(Dispo)" style="width:100%">
+				 <button class="ui icon button" data-ng-click="cont.addAllToIncluded()" style="width:100%">
 						<i class="Angle Double Right icon"></i>
 				</button>
 		 </td>
@@ -59,7 +59,7 @@
 	 <tr>
 
 			 <td >
-				 <button class="ui icon button" data-ng-click="cont.btn4(Dispo)" style="width:100%">
+				 <button class="ui icon button" data-ng-click="cont.removeAllFromIncluded()" style="width:100%">
 						<i class="Angle Double Left icon"></i>
 				</button>
 
@@ -70,7 +70,7 @@
 
 			 <td >
 
-				 <button class="ui icon button" data-ng-click="cont.btn2(Select)" style="width:100%">
+				 <button class="ui icon button" data-ng-click="cont.removeFromIncluded(Select)" style="width:100%">
 						<i class="Angle Left icon"></i>
 				</button>
 		 </td>
