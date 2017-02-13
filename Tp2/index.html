@@ -25,15 +25,17 @@
 
 <script type="text/javascript" src="app.js"></script>
 
-<link rel="stylesheet" href="styles.css">
 
-<div data-ng-app="myApp"  ng-controller="DispController as cont" ng-init="cont.removeAllFromIncluded()">
+<div data-ng-app="myApp"  ng-controller="DispController as cont" >
 <form data-ng-show="cont.step==1">
 	<h1 class="text-center">Séléctionnez vos articles</h1>
+
+	<div ng-repeat=" disp in cont.dispoItems" ng-init="cont.removeAllFromIncluded()">
+	</div>
 			<table style="width:95%;margin:auto" >
    		<tr>
        <td rowspan="4" style="width:50%;margin:auto" >
-				 <select class="selectpicker" multiple ng-dblClick="cont.addToIncluded(Dispo)" style="width:100%;margin:auto" data-ng-model="Dispo" size="10" data-ng-options="disp.title for disp in cont.Dispo|filter:disp.select=false" ng-change="cont.current=(champs.indexOf(selected_table))" >
+				 <select class="selectpicker" multiple ng-dblClick="cont.addToIncluded(Dispo)" style="width:100%;margin:auto" data-ng-model="Dispo" size="10" data-ng-options="disp.title for disp in cont.dispoItems|filter:disp.select=false" ng-change="cont.current=(champs.indexOf(selected_table))" >
 				 </select>
 		 </td>
 			 <td style="width:5%" >
@@ -43,7 +45,7 @@
 
 		 </td>
 			 <td rowspan="4" style="width:50%;margin:auto" >
-				 <select class="selectpicker" multiple ng-dblClick="cont.removeFromIncluded(Select)" style="width:100%;margin:auto" data-ng-model="Select" size="10" data-ng-options="disp.title for disp in cont.Dispo|filter:disp.select=true">
+				 <select class="selectpicker" multiple ng-dblClick="cont.removeFromIncluded(Select)" style="width:100%;margin:auto" data-ng-model="Select" size="10" data-ng-options="disp.title for disp in cont.dispoItems|filter:disp.select=true">
 				 </select>
 
 			 </td>
@@ -93,7 +95,7 @@
 </form>
 <form data-ng-show="cont.step==2">
 	<h1 class="text-center">Votre choix</h1>
-	<div style="width:50%;margin:auto;" data-ng-repeat="Select in cont.Dispo">
+	<div style="width:50%;margin:auto;" data-ng-repeat="Select in cont.dispoItems">
 
 		<div ng-if="Select.select==true">
 			<p><img ng-src="{{Select.image}}" style="margin-right: 30px; " alt="Description" />{{Select.title}}</p>
