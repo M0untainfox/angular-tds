@@ -88,18 +88,18 @@
     };
 
     this.cancelAjout = function(){
-      this.tabCont.nm="";
-      this.tabCont.pnm="";
-      this.tabCont.ml="";
-
       this.add=false;
+
+      this.tabCont = null;
+
+
     };
 
-    this.submit = function(rep){
-        rep.mod=false;
-        rep.dl=false;
-        console.log(rep);
-        this.contact.push(rep);
+    this.submit = function(){
+        this.tabCont.modifia = false;
+        this.tabCont.del=false;
+        console.log(this.tabCont);
+        this.contact.push(this.tabCont);
         this.tabCont = null;
 
         this.add=false;

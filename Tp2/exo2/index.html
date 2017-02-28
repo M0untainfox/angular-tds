@@ -34,13 +34,13 @@
 			<div class="panel-body">
 				<table class="ui blue table" data-ng-init="cont.init()">
 				  <thead>
-				    <tr><th>Nom</th>
+				    <tr><th>Nom {{cont.countSup()}}</th>
 				    <th>Prenom</th>
 				    <th>Em@il</th>
 						<th>Actions</th>
 				  </tr></thead><tbody>
 				    <tr data-ng-repeat="Pers in cont.contact" data-ng-if="Pers.del==false" >
-							<td>{{Pers.nom}}</td><td>{{Pers.prenom}}</td><td>{{Pers.mail}} {{Pers.modifia}} {{Pers.del}}</td><td>
+							<td>{{Pers.nom}}</td><td>{{Pers.prenom}}</td><td>{{Pers.mail}}</td><td>
 								<button data-ng-click="cont.modif(Pers)" class="ui green left attached button">modifier</button>
 								<button data-ng-click="cont.delete(Pers)" class="right red attached ui button">supprimer</button>
 							</td>
@@ -51,21 +51,21 @@
 		</div>
 		<div>
 			<button data-ng-click="cont.ajouter()" class="ui green left attached button">Ajouter</button>
-			<button data-ng-click="cont.cancel()" data-ng-if="cont.countSup()>0" class="right red attached ui button">Annuler suppression
+			<button data-ng-click="cont.cancel()" data-ng-if="cont.countSup()!=0" class="right red attached ui button">Annuler suppression
 				<p><ng-pluralize  count="cont.countSup()" when="{'1': '',
 																										 'other':'({})'}">
 				</ng-pluralize></p>
 			</button>
 		</div>
-		<form ng-submit="cont.submit(cont.tabCont)" data-ng-show="cont.add==true">
+		<form name="frmContact" ng-submit="frmContact.$valid && cont.submit()" data-ng-show="cont.add==true">
 			<div class="ui input">
-  			<input data-ng-model="cont.tabCont.nm" placeholder="Nom" type="text">
+  			<input data-ng-model="cont.tabCont.nom" placeholder="Nom" type="text" required  >
 			</div>
 			<div class="ui input">
-  			<input data-ng-model="cont.tabCont.pnm" placeholder="Prenom" type="text">
+  			<input data-ng-model="cont.tabCont.prenom" placeholder="Prenom" type="text">
 			</div>
 			<div class="ui input">
-  			<input data-ng-model="cont.tabCont.ml" placeholder="Mail" type="text">
+  			<input data-ng-model="cont.tabCont.mail" placeholder="Mail" type="text" required pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 			</div>
 			<input type="submit" class="ui green left attached button" value="valider">
 			<button data-ng-click="cont.cancelAjout()" class="right red attached ui button">annuler</button>
