@@ -30,6 +30,8 @@
 
     this.tabCont = [];
 
+    this.filter = null;
+
 
     this.init = function(){
       for(i = 0;i<this.contact.length;i++){
@@ -88,7 +90,7 @@
     this.ajouter = function(){
       for(i = 0;i<this.contact.length;i++){
         this.contact[i].modifia = false;
-      
+
       }
 
       if(this.add==false){
@@ -116,4 +118,16 @@
     };
 
   })
+
+  myApp.filter('filtring',function(){
+      return function(items){
+          var result=[];
+          for(var i=0;i<items.length;i++){
+              if(!items[i].del)
+                  result.push(items[i]);
+          }
+          return result;
+      };
+  });
+  
 })();

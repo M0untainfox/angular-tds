@@ -29,17 +29,17 @@
 <div data-ng-app="myApp"  ng-controller="ContactController as cont" >
 	<div class="panel panel-primary">
 		<div class="panel-heading">Contacts</div>
-			<input placeholder="Filtrer..." data-ng-model="q" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" style="" type="text">
-
+			<input placeholder="Filtrer..." data-ng-model="filtre" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" style="" type="text">
+				{{cont.filtre}}
 			<div class="panel-body">
 				<table class="ui blue table" data-ng-init="cont.init()">
 				  <thead>
-				    <tr><th>Nom {{cont.countSup()}}</th>
+				    <tr><th>Nom</th>
 				    <th>Prenom</th>
 				    <th>Em@il</th>
 						<th>Actions</th>
 				  </tr></thead><tbody>
-				    <tr data-ng-repeat="Pers in cont.contact" data-ng-if="Pers.del==false" >
+				    <tr data-ng-repeat="Pers in cont.contact | filtring |filter : filtre as result" >
 							<td>{{Pers.nom}}</td><td>{{Pers.prenom}}</td><td>{{Pers.mail}}</td><td>
 								<button data-ng-click="cont.modif(Pers)" class="ui green left attached button">modifier</button>
 								<button data-ng-click="cont.delete(Pers)" class="right red attached ui button">supprimer</button>
