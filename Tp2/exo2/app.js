@@ -39,6 +39,10 @@
     };
 
     this.modif = function(res){
+      for(i = 0;i<this.contact.length;i++){
+        this.contact[i].modifia = false;
+      }
+      this.cancelAjout();
       if(res.modifia==false){
         res.modifia = true;
       }
@@ -82,6 +86,11 @@
     };
 
     this.ajouter = function(){
+      for(i = 0;i<this.contact.length;i++){
+        this.contact[i].modifia = false;
+      
+      }
+
       if(this.add==false){
         this.add=true;
       }
