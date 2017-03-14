@@ -41,7 +41,7 @@ angular.module('myApp').controller("ContactController",function($scope, $http){
     console.log('https://free.currencyconverterapi.com/api/v3/convert?compact=y&q='+this.from.code+'_'+this.to.code);
     $http.jsonp('https://free.currencyconverterapi.com/api/v3/convert?compact=y&q='+this.from.code+'_'+this.to.code, {jsonpCallbackParam: 'callback'})
     .then(function(response) {
-      self.result= self.valeur * response.data[self.from.code+'_'+self.to.code].val;
+      self.result= self.what * response.data[self.from.code+'_'+self.to.code].val;
       console.log("result :" + self.result);
     });
 
