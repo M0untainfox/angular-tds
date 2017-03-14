@@ -33,7 +33,7 @@
 		<div class="panel-heading">Ex 3 : Currency Application</div>
 		<div class="panel-body">
 			<form class="form-group form-inline ng-pristine ng-valid" ng-keypress="$event.keyCode == 13 ? getResult() : null">
-				<input data-ng-model="cont.valeur" type="text" class="form-control ng-pristine ng-valid ng-touched" size="5" style="">
+				<input data-ng-model="cont.what" type="text" class="form-control ng-pristine ng-valid ng-touched" size="5" style="">
 
 				<select data-ng-model="cont.from" data-ng-options="v.code + ' - '+ v.name for v in cont.currencies" class="form-control ng-valid ng-touched ng-dirty ng-valid-parse" style="">
 				</select>

@@ -8,13 +8,16 @@ angular.module('myApp').controller("ContactController",function($scope, $http){
   then(function(response) {
       self.currencies = response.data;
       console.log(self.currencies["EUR"]);
+      self.to = self.currencies.EUR;
+      self.from = self.currencies.USD;
+
       //this.from = self.currencies["EUR"];
   },
   function(response) {
       console.log("Erreur avec le statut Http : "+response.status);
   });
 
-  this.valeur= 1;
+  this.what= 1;
   this.from = null;
   this.to = null;
   this.res=null;
