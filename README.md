@@ -15,7 +15,7 @@ Dépot Github crée dans le cadre du module **"Programmation web client riche"**
 |  | [Exercice 2]([Exo1.1]) |
 | [TD 3]([TD3]) | [Exercice 1]([Exo1.1]) |
 
-   [Exo1.1]: <https://github.com/M0untainfox/angular-tds/blob/master/Tp1/Exo1>
+   [Exo1.1]: <https://github.com/M0untainfox/angular-tds/tree/master/Tp1/Exo1>
    [Exo1.2]: <https://github.com/M0untainfox/angular-tds/tree/master/Tp1/Exo2/README.md>
    [Exo2.1]: <https://github.com/M0untainfox/angular-tds/tree/master/Tp2/exo1/README.md>
    [Exo2.2]: <https://github.com/M0untainfox/angular-tds/tree/master/Tp2/exo2/README.md>
