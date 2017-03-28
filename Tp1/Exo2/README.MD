@@ -17,7 +17,20 @@
 - Afficher le nombre de services sélectionnés
 
 # Resenti et difficultés rencontrées
- L'exercice etait assez simple en lui même la difficulté principale résidée en l'importation des divers codes promo contenue dans un fichier json, pour cela il a fallu injecter le service $http afin de récuperer les données et les stocker dans une variable apres cela l'application etait assez simple avec des :
+ L'exercice etait assez simple en lui même la difficulté principale résidée en l'importation des divers codes promo contenue dans un fichier json, pour cela il a fallu injecter le service $http afin de récuperer les données et les stocker dans une variable de cette maniere : 
+ 
+ ```
+ $http.get("promo.json")
+    .then(function(response) {
+        $scope.myWelcome = response.data;
+
+        //alert($scope.myWelcome);
+        console.log($scope.myWelcome['B22']);
+    });
+```
+ 
+ 
+ Apres cela l'application etait assez simple avec des :
  - ng-class
  - ng-click
  - ng-repeat
