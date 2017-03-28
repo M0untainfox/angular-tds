@@ -9,7 +9,7 @@ Dépot Github crée dans le cadre du module **"Programmation web client riche"**
 
 | TD | Exercices | But |
 | ------ | ------ | ------ |
-| [TD 1] [TD1]  | [Exercice 1] [Exo1.1] | ------ |
+| [TD 1] [TD1]  | [Exercice 1]([Exo1.1]) | ------ |
 |  | [Exercice 2] [Exo1.1] | ------ |
 | [TD 2] [TD2] | [Exercice 1] [Exo1.1] | ------ |
 |  | [Exercice 2] [Exo1.1] | ------ |
