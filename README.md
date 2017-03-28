@@ -21,5 +21,5 @@ Dépot Github crée dans le cadre du module **"Programmation web client riche"**
    [Exo2.2]: <https://github.com/M0untainfox/angular-tds/tree/master/Tp2/exo2/README.md>
    [Exo3.1]: <https://github.com/M0untainfox/angular-tds/tree/master/Tp3/exo1/README.md>
    [TD1]: <http://slamwiki.kobject.net/slam4/richclient/angularjs/td1>
-   [TD2]: <hhttp://slamwiki.kobject.net/slam4/richclient/angularjs/td2>
+   [TD2]: <http://slamwiki.kobject.net/slam4/richclient/angularjs/td2>
    [TD3]: <http://slamwiki.kobject.net/slam4/richclient/angularjs/td3>
