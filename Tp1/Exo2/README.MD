@@ -12,9 +12,9 @@
 
 # Fonctionnalités a implémentées
 
-- Sélectionner/désélectionner des services
-- Calculer le montant dû
-- Afficher le nombre de services sélectionnés
+- [x] Sélectionner/désélectionner des services
+- [x] Calculer le montant dû
+- [x] Afficher le nombre de services sélectionnés
 
 # Resenti et difficultés rencontrées
  L'exercice etait assez simple en lui même la difficulté principale résidée en l'importation des divers codes promo contenue dans un fichier json, pour cela il a fallu injecter le service $http afin de récuperer les données et les stocker dans une variable de cette maniere : 
