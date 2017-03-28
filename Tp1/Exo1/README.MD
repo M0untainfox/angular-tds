@@ -11,11 +11,11 @@
 
 # Fonctionnalités à implémentées
 
-- Saisir une note (message textuel) et afficher le nombre de caractères restants (le message  est limité à 100 caractères saisis)
-- Enregistrer (côté client en JS)
-- Effacer le contenu
-- Afficher les messages d'info (sauvegarde, modification…)
-- Gérer les changements de classe CSS sur l'affichage d'info
+- [x]Saisir une note (message textuel) et afficher le nombre de caractères restants (le message  est limité à 100 caractères saisis)
+- [x]Enregistrer (côté client en JS)
+- [x]Effacer le contenu
+- [x]Afficher les messages d'info (sauvegarde, modification…)
+- [x]Gérer les changements de classe CSS sur l'affichage d'info
 
 # Resenti et difficultés rencontrées
    Grâce a l'introduction sur AngularJS que nous avons eu les semaines précédentes, l'exercice 1 s'est dérouler assez facilement, la seul chose que m'a poser probleme a etait la mise en place du systeme de cookie afin de sauvegarder les informations saisies par l'utilisateur.
