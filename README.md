@@ -9,7 +9,7 @@ Dépot Github crée dans le cadre du module **"Programmation web client riche"**
 
 | TD | Exercices |
 | ------ | ------ | 
-| [TD 1]([TD1]) | [Exercice 1]([Exo11]) | 
+| [TD 1]([TD1]) | [Exercice 1](https://github.com/M0untainfox/angular-tds/blob/master/Tp1/Exo1/README.MD) | 
 |  | [Exercice 2]([Exo12]) | 
 | [TD 2]([TD2]) | [Exercice 1]([Exo21]) | 
 |  | [Exercice 2]([Exo22]) |
