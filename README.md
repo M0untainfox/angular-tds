@@ -5,7 +5,7 @@
 
 Dépot Github crée dans le cadre du module **"Programmation web client riche"** présent au semestre 4 du Dut informatique de l'université de Caen.
 
-# Travail réaliser par Antoine Prentout
+# Travail réalisé par Antoine Prentout
 
 | TD | Exercices |
 | ------ | ------ | 
